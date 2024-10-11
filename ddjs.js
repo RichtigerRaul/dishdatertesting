@@ -3,10 +3,12 @@ let currentZutatenIndex = 0;
 let likedZutaten = [];
 let currentCategory = 'Snacks';
 
-const PLACEHOLDER_IMAGE = 'https://raw.githubusercontent.com/RichtigerRaul/dishdatertesting/refs/heads/main/img/z/1.jpg';
+const BASE_URL = 'https://richtigerraul.github.io/dishdatertesting/';
+const RAW_GITHUB_URL = 'https://raw.githubusercontent.com/RichtigerRaul/dishdatertesting/refs/heads/main/';
+const PLACEHOLDER_IMAGE = `${RAW_GITHUB_URL}img/z/1.jpg`;
 
 window.onload = function () {
-    fetch('json/z.json')
+    fetch(`${BASE_URL}json/z.json`)
         .then(response => {
             if (!response.ok) {
                 throw new Error('Netzwerkantwort war nicht ok');
@@ -52,15 +54,28 @@ function loadImage(imagePath) {
     
     imgElement.src = PLACEHOLDER_IMAGE; // Setze zuerst das Platzhalterbild
 
+    // Behandle verschiedene Bildpfadformate
+    let fullImagePath;
+    if (imagePath.startsWith('http')) {
+        fullImagePath = imagePath;
+    } else if (imagePath.startsWith('img/')) {
+        fullImagePath = `${RAW_GITHUB_URL}${imagePath}`;
+    } else {
+        fullImagePath = `${BASE_URL}${imagePath}`;
+    }
+
+    console.log('Versuche Bild zu laden:', fullImagePath); // Debugging-Ausgabe
+
     const img = new Image();
     img.onload = function() {
         imgElement.src = this.src;
+        console.log('Bild erfolgreich geladen:', this.src); // Debugging-Ausgabe
     };
     img.onerror = function() {
-        console.error(`Fehler beim Laden des Bildes: ${imagePath}`);
+        console.error(`Fehler beim Laden des Bildes: ${fullImagePath}`);
         imgElement.src = PLACEHOLDER_IMAGE;
     };
-    img.src = imagePath;
+    img.src = fullImagePath;
 }
 
 function addEventListeners() {
@@ -86,5 +101,5 @@ function nextZutaten() {
 }
 
 function goto(page) {
-    window.location.href = page;
+    window.location.href = `${BASE_URL}${page}`;
 }
