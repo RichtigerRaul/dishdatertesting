@@ -1,15 +1,21 @@
-// JSON-Daten laden
 let zutatenData = [];
 let currentZutatenIndex = 0;
 
-// Laden der Zutaten JSON-Daten
-fetch('json/z.json')
-    .then(response => response.json())
-    .then(data => {
-        zutatenData = data.z.Kategorien.Gemüse;
-        displayZutaten(currentZutatenIndex);
-    })
-    .catch(error => console.error('Fehler beim Laden der JSON-Daten:', error));
+// JSON-Daten laden
+window.onload = function () {
+    fetch('json/z.json')  // Stelle sicher, dass dieser Pfad korrekt ist
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Netzwerkantwort war nicht ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            zutatenData = data.z.Kategorien.Gemüse;  // Stelle sicher, dass die Struktur passt
+            displayZutaten(currentZutatenIndex);
+        })
+        .catch(error => console.error('Fehler beim Laden der JSON-Daten:', error));
+};
 
 // Funktion zum Anzeigen einer Zutat
 function displayZutaten(index) {
