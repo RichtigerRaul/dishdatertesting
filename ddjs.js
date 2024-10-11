@@ -4,6 +4,8 @@ let likedZutaten = [];
 let currentCategory = 'Snacks';
 
 const BASE_URL = 'https://richtigerraul.github.io/dishdatertesting/';
+const RAW_GITHUB_URL = 'https://raw.githubusercontent.com/RichtigerRaul/dishdatertesting/refs/heads/main/';
+const PLACEHOLDER_IMAGE = `${RAW_GITHUB_URL}img/z/1.jpg`;
 
 window.onload = function () {
     fetch(`${BASE_URL}json/z.json`)
@@ -43,8 +45,37 @@ function displayZutaten(index) {
     if (zutaten) {
         document.getElementById('zutaten-name').textContent = zutaten.name;
         document.getElementById('zutaten-tags').textContent = zutaten.tags.join(', ');
-        document.getElementById('zutaten-image').src = zutaten.img;
+        loadImage(zutaten.img);
     }
+}
+
+function loadImage(imagePath) {
+    const imgElement = document.getElementById('zutaten-image');
+    
+    imgElement.src = PLACEHOLDER_IMAGE; // Setze zuerst das Platzhalterbild
+
+    // Behandle verschiedene Bildpfadformate
+    let fullImagePath;
+    if (imagePath.startsWith('http')) {
+        fullImagePath = imagePath;
+    } else if (imagePath.startsWith('img/')) {
+        fullImagePath = `${RAW_GITHUB_URL}${imagePath}`;
+    } else {
+        fullImagePath = `${BASE_URL}${imagePath}`;
+    }
+
+    console.log('Versuche Bild zu laden:', fullImagePath); // Debugging-Ausgabe
+
+    const img = new Image();
+    img.onload = function() {
+        imgElement.src = this.src;
+        console.log('Bild erfolgreich geladen:', this.src); // Debugging-Ausgabe
+    };
+    img.onerror = function() {
+        console.error(`Fehler beim Laden des Bildes: ${fullImagePath}`);
+        imgElement.src = PLACEHOLDER_IMAGE;
+    };
+    img.src = fullImagePath;
 }
 
 function addEventListeners() {
