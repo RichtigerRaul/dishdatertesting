@@ -11,30 +11,28 @@ window.onload = function () {
             return response.json();
         })
         .then(data => {
-            // Alle Kategorien in ein Array zusammenführen
-            zutatenData = Object.values(data.z.Kategorien).flat();
-            // Zufällig mischen
-            zutatenData = shuffleArray(zutatenData);
+            // Nur Snacks-Zutaten auswählen
+            zutatenData = data.z.Mahlzeiten.Snacks.map(id => {
+                // Suche die Zutat mit der entsprechenden ID
+                for (let category in data.z.Kategorien) {
+                    let zutat = data.z.Kategorien[category].find(item => item.id === id);
+                    if (zutat) return zutat;
+                }
+            }).filter(zutat => zutat); // Entferne undefined Elemente
+
             displayZutaten(currentZutatenIndex);
             addEventListeners();
         })
         .catch(error => console.error('Fehler beim Laden der JSON-Daten:', error));
 };
 
-function shuffleArray(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-    }
-    return array;
-}
-
 function displayZutaten(index) {
     const zutaten = zutatenData[index];
-    const imagePath = zutaten.img || 'img/placeholder.jpg'; // Fallback-Bild
-    document.getElementById('zutaten-image').src = imagePath;
-    document.getElementById('zutaten-name').textContent = zutaten.name;
-    document.getElementById('zutaten-tags').textContent = zutaten.tags.join(', ');
+    if (zutaten) {
+        document.getElementById('zutaten-image').src = zutaten.img;
+        document.getElementById('zutaten-name').textContent = zutaten.name;
+        document.getElementById('zutaten-tags').textContent = zutaten.tags.join(', ');
+    }
 }
 
 function addEventListeners() {
@@ -54,7 +52,6 @@ function nextZutaten() {
     currentZutatenIndex++;
     if (currentZutatenIndex >= zutatenData.length) {
         currentZutatenIndex = 0;
-        zutatenData = shuffleArray(zutatenData); // Neu mischen, wenn alle durch sind
     }
     displayZutaten(currentZutatenIndex);
 }
