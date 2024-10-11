@@ -1,6 +1,7 @@
 let zutatenData = [];
 let currentZutatenIndex = 0;
 let likedZutaten = [];
+let currentCategory = 'Snacks'; // Diese Variable kann geändert werden, um verschiedene Kategorien auszuwählen
 
 window.onload = function () {
     fetch('json/z.json')
@@ -11,22 +12,22 @@ window.onload = function () {
             return response.json();
         })
         .then(data => {
-            // Extrahiere nur die Snack-Zutaten
-            zutatenData = data.z.Mahlzeiten.Snacks.map(id => {
-                for (let category in data.z.Kategorien) {
-                    let zutat = data.z.Kategorien[category].find(item => item.id === id);
-                    if (zutat) return zutat;
-                }
-            }).filter(zutat => zutat);
-
-            // Mische die Zutaten zufällig
+            zutatenData = getZutatenForCategory(data, currentCategory);
             shuffleArray(zutatenData);
-
             displayZutaten(currentZutatenIndex);
             addEventListeners();
         })
         .catch(error => console.error('Fehler beim Laden der JSON-Daten:', error));
 };
+
+function getZutatenForCategory(data, category) {
+    return data.z.Mahlzeiten[category].map(id => {
+        for (let cat in data.z.Kategorien) {
+            let zutat = data.z.Kategorien[cat].find(item => item.id === id);
+            if (zutat) return zutat;
+        }
+    }).filter(zutat => zutat);
+}
 
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -40,22 +41,27 @@ function displayZutaten(index) {
     if (zutaten) {
         document.getElementById('zutaten-name').textContent = zutaten.name;
         document.getElementById('zutaten-tags').textContent = zutaten.tags.join(', ');
-        loadImage(zutaten.img);
+        preloadImage(zutaten.img);
     }
 }
 
-function loadImage(src) {
+function preloadImage(src) {
     const img = new Image();
     const imgElement = document.getElementById('zutaten-image');
     const placeholder = 'img/placeholder.jpg';
 
+    // Verstecke das aktuelle Bild während des Ladens
+    imgElement.style.display = 'none';
+
     img.onload = function() {
         imgElement.src = this.src;
+        imgElement.style.display = 'block'; // Zeige das Bild wieder an
     };
 
     img.onerror = function() {
         console.error(`Fehler beim Laden des Bildes: ${src}`);
         imgElement.src = placeholder;
+        imgElement.style.display = 'block'; // Zeige das Platzhalterbild an
     };
 
     img.src = src;
@@ -78,7 +84,7 @@ function nextZutaten() {
     currentZutatenIndex++;
     if (currentZutatenIndex >= zutatenData.length) {
         currentZutatenIndex = 0;
-        shuffleArray(zutatenData); // Mische die Zutaten neu, wenn alle durchgegangen wurden
+        shuffleArray(zutatenData);
     }
     displayZutaten(currentZutatenIndex);
 }
