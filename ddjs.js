@@ -52,7 +52,8 @@ function displayZutaten(index) {
 function loadImage(imagePath) {
     const imgElement = document.getElementById('zutaten-image');
     
-    imgElement.src = PLACEHOLDER_IMAGE; // Setze zuerst das Platzhalterbild
+    // Setze zuerst das Platzhalterbild
+    imgElement.src = PLACEHOLDER_IMAGE;
 
     // Behandle verschiedene Bildpfadformate
     let fullImagePath;
@@ -66,16 +67,16 @@ function loadImage(imagePath) {
 
     console.log('Versuche Bild zu laden:', fullImagePath); // Debugging-Ausgabe
 
-    const img = new Image();
-    img.onload = function() {
-        imgElement.src = this.src;
+    imgElement.onload = function() {
         console.log('Bild erfolgreich geladen:', this.src); // Debugging-Ausgabe
     };
-    img.onerror = function() {
+    
+    imgElement.onerror = function() {
         console.error(`Fehler beim Laden des Bildes: ${fullImagePath}`);
-        imgElement.src = PLACEHOLDER_IMAGE;
+        this.src = PLACEHOLDER_IMAGE;
     };
-    img.src = fullImagePath;
+    
+    imgElement.src = fullImagePath;
 }
 
 function addEventListeners() {
