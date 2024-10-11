@@ -20,7 +20,7 @@ window.onload = function () {
 // Funktion zum Anzeigen einer Zutat
 function displayZutaten(index) {
     const zutaten = zutatenData[index];
-    document.getElementById('zutaten-image').src = zutaten.img;
+    document.getElementById('zutaten-image').src = img/z/1.jpg;
     document.getElementById('zutaten-name').textContent = zutaten.name;
     document.getElementById('zutaten-tags').textContent = zutaten.tags.join(', ');
 }
