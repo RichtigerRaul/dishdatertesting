@@ -85,6 +85,7 @@ function loadImage(imagePath) {
 function addEventListeners() {
     document.getElementById('like-btn').addEventListener('click', () => handleZutaten(true));
     document.getElementById('dislike-btn').addEventListener('click', () => handleZutaten(false));
+    document.getElementById('back-btn').addEventListener('click', () => goto('menu.html'));
 }
 
 function handleZutaten(liked) {
@@ -107,3 +108,5 @@ function nextZutaten() {
 function goto(page) {
     window.location.href = `${BASE_URL}${page}`;
 }
+
+document.addEventListener('DOMContentLoaded', addEventListeners);
