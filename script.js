@@ -1,4 +1,4 @@
-// JavaScript-Funktion zum Weiterleiten
-function menu() {
-    window.location.href = "main/menu.html";
+// Funktion zur Navigation zwischen Seiten
+function navigateTo(page) {
+    window.location.href = page;
 }
