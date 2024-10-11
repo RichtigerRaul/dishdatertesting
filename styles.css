@@ -1,17 +1,3 @@
-/* Flexbox-Einstellungen für das Body-Element */
-body {
-    display: flex;
-    justify-content: center; /* Zentriert horizontal */
-    align-items: center; /* Zentriert vertikal */
-    height: 100vh; /* Nimmt die volle Höhe des Viewports ein */
-    margin: 0; /* Entfernt Standardmargen */
-    flex-direction: column; /* Ordnet die Elemente untereinander an */
-}
-
-img, button {
-    margin: 10px 0; /* Abstand zwischen den Elementen */
-}
-
 button {
     padding: 15px 30px;
     font-size: 18px;
@@ -24,6 +10,12 @@ button {
     transition: background-color 0.3s ease, transform 0.3s ease;
     outline: none; /* Entfernt den Standard-Umriss */
     -webkit-tap-highlight-color: transparent; /* Entfernt den Tap-Highlight-Effekt auf Mobilgeräten */
+}
+
+/* Entferne die Fokus-Umrisse auf mobilen Geräten */
+button:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.5); /* Optional: Füge einen sanften Fokus-Schatten hinzu */
 }
 
 /* Effekt bei Hover (für Desktop-Browser) */
@@ -39,12 +31,12 @@ button:active {
     background-color: #0056b3;
 }
 
-/* Entferne den Fokus-Stil beim Klicken (auch für mobile Geräte) */
-button:focus {
-    outline: none; /* Entfernt den blauen Umriss beim Fokus */
+/* Entferne den blauen Umriss für Firefox */
+button::-moz-focus-inner {
+    border: 0;
 }
 
-/* Mobile Optimierungen */
+/* Spezifische Regeln für mobile Browser */
 @media (hover: none) {
     button:hover {
         transform: none; /* Keine Hover-Animationen auf Mobilgeräten */
@@ -53,9 +45,4 @@ button:focus {
     button:active {
         background-color: #0056b3; /* Farbwechsel bei Klick auf Mobilgeräten */
     }
-}
-
-/* Zusätzlich für Safari und andere mobile Browser */
-button::-moz-focus-inner {
-    border: 0; /* Entfernt den inneren Rand in Firefox */
 }
