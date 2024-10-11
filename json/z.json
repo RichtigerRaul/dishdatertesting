@@ -294,7 +294,8 @@
                     "name": "Butter",
                     "img":"https://raw.githubusercontent.com/RichtigerRaul/dishdatertesting/refs/heads/main/img/z/1.jpg",
                     "tags": [
-                        "vegetarisch"
+                        "vegetarisch",
+                        "sauce"
                     ]
                 },
                 {
@@ -348,7 +349,8 @@
                     "name": "Schmand",
                     "img":"https://raw.githubusercontent.com/RichtigerRaul/dishdatertesting/refs/heads/main/img/z/1.jpg",
                     "tags": [
-                        "vegetarisch"
+                        "vegetarisch",
+                        "sauce"
                     ]
                 },
                 {
@@ -539,7 +541,8 @@
                     "img":"https://raw.githubusercontent.com/RichtigerRaul/dishdatertesting/refs/heads/main/img/z/1.jpg",
                     "tags": [
                         "vegan",
-                        "vegetarisch"
+                        "vegetarisch",
+                        "sauce"
                     ]
                 },
                 {
@@ -548,7 +551,8 @@
                     "img":"https://raw.githubusercontent.com/RichtigerRaul/dishdatertesting/refs/heads/main/img/z/1.jpg",
                     "tags": [
                         "vegan",
-                        "vegetarisch"
+                        "vegetarisch",
+                        "sauce"
                     ]
                 }
             ],
@@ -609,7 +613,8 @@
                     "img":"https://raw.githubusercontent.com/RichtigerRaul/dishdatertesting/refs/heads/main/img/z/1.jpg",
                     "tags": [
                         "vegan",
-                        "vegetarisch"
+                        "vegetarisch",
+                        "sauce"
                     ]
                 },
                 {
@@ -617,7 +622,8 @@
                     "name": "Mayo",
                     "img":"https://raw.githubusercontent.com/RichtigerRaul/dishdatertesting/refs/heads/main/img/z/1.jpg",
                     "tags": [
-                        "vegetarisch"
+                        "vegetarisch",
+                        "sauce"
                     ]
                 },
                 {
@@ -645,7 +651,8 @@
                     "img":"https://raw.githubusercontent.com/RichtigerRaul/dishdatertesting/refs/heads/main/img/z/1.jpg",
                     "tags": [
                         "vegan",
-                        "vegetarisch"
+                        "vegetarisch",
+                        "sauce"
                     ]
                 },
                 {
@@ -654,7 +661,8 @@
                     "img":"https://raw.githubusercontent.com/RichtigerRaul/dishdatertesting/refs/heads/main/img/z/1.jpg",
                     "tags": [
                         "vegan",
-                        "vegetarisch"
+                        "vegetarisch",
+                        "sauce"
                     ]
                 },
                 {
@@ -663,7 +671,8 @@
                     "img":"https://raw.githubusercontent.com/RichtigerRaul/dishdatertesting/refs/heads/main/img/z/1.jpg",
                     "tags": [
                         "vegan",
-                        "vegetarisch"
+                        "vegetarisch",
+                        "sauce"
                     ]
                 }
             ]
