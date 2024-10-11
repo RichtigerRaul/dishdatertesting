@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8"> <!-- Zeichensatz, damit Umlaute korrekt dargestellt werden -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Für responsive Darstellung auf mobilen Geräten -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Verknüpfung mit der CSS-Datei -->
 </head>
 <body>
-    <button>Frühstück</button>
-    <button>Mittagessen</button>
-    <button>Abendessen</button>
-    <button>Snacks</button>
+    <img src="img/main/logoicon.jpg" alt="Logo">
+    <button onclick="goto('dishdater.html')">Frühstück</button>
+    <button onclick="goto('dishdater.html')">Mittagessen</button>
+    <button onclick="goto('dishdater.html')">Abendessen</button>
+    <button onclick="goto('dishdater.html')">Snacks</button>
+
+    <!-- Verknüpfung zur externen JavaScript-Datei -->
+    <script src="script.js"></script>
 </body>
 </html>
