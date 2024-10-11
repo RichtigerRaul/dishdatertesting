@@ -1,3 +1,17 @@
+/* Flexbox-Einstellungen für das Body-Element */
+body {
+    display: flex;
+    justify-content: center; /* Zentriert horizontal */
+    align-items: center; /* Zentriert vertikal */
+    height: 100vh; /* Nimmt die volle Höhe des Viewports ein */
+    margin: 0; /* Entfernt Standardmargen */
+    flex-direction: column; /* Ordnet die Elemente untereinander an */
+}
+
+img, button {
+    margin: 10px 0; /* Abstand zwischen den Elementen */
+}
+
 button {
     padding: 15px 30px;
     font-size: 18px;
