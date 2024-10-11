@@ -11,14 +11,12 @@ window.onload = function () {
             return response.json();
         })
         .then(data => {
-            // Nur Snacks-Zutaten auswählen
             zutatenData = data.z.Mahlzeiten.Snacks.map(id => {
-                // Suche die Zutat mit der entsprechenden ID
                 for (let category in data.z.Kategorien) {
                     let zutat = data.z.Kategorien[category].find(item => item.id === id);
                     if (zutat) return zutat;
                 }
-            }).filter(zutat => zutat); // Entferne undefined Elemente
+            }).filter(zutat => zutat);
 
             displayZutaten(currentZutatenIndex);
             addEventListeners();
@@ -29,7 +27,12 @@ window.onload = function () {
 function displayZutaten(index) {
     const zutaten = zutatenData[index];
     if (zutaten) {
-        document.getElementById('zutaten-image').src = zutaten.img;
+        const img = document.getElementById('zutaten-image');
+        img.src = ''; // Zurücksetzen des src-Attributs
+        img.src = zutaten.img; // Neues Bild laden
+        img.onerror = function() {
+            this.src = 'img/placeholder.jpg'; // Fallback-Bild, falls das Laden fehlschlägt
+        };
         document.getElementById('zutaten-name').textContent = zutaten.name;
         document.getElementById('zutaten-tags').textContent = zutaten.tags.join(', ');
     }
