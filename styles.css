@@ -23,9 +23,10 @@ button {
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s ease, transform 0.3s ease;
     outline: none; /* Entfernt den Standard-Umriss */
+    -webkit-tap-highlight-color: transparent; /* Entfernt den Tap-Highlight-Effekt auf Mobilgeräten */
 }
 
-/* Effekt bei Hover */
+/* Effekt bei Hover (für Desktop-Browser) */
 button:hover {
     background-color: #0056b3;
     transform: scale(1.05);
@@ -35,11 +36,12 @@ button:hover {
 button:active {
     transform: scale(0.95);
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    background-color: #0056b3;
 }
 
 /* Entferne den Fokus-Stil beim Klicken (auch für mobile Geräte) */
 button:focus {
-    outline: none; /* Entfernt den blauen Umriss */
+    outline: none; /* Entfernt den blauen Umriss beim Fokus */
 }
 
 /* Mobile Optimierungen */
@@ -51,4 +53,9 @@ button:focus {
     button:active {
         background-color: #0056b3; /* Farbwechsel bei Klick auf Mobilgeräten */
     }
+}
+
+/* Zusätzlich für Safari und andere mobile Browser */
+button::-moz-focus-inner {
+    border: 0; /* Entfernt den inneren Rand in Firefox */
 }
