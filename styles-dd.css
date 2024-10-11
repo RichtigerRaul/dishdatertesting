@@ -72,3 +72,14 @@ button {
     background-color: #f44336;
     color: white;
 }
+
+.back-button {
+    margin-top: 20px;
+}
+
+.card img {
+    width: 100%;
+    height: 200px; /* oder die gewünschte Höhe */
+    object-fit: cover; /* Dies stellt sicher, dass das Bild den Container ausfüllt und dabei sein Seitenverhältnis beibehält */
+    border-radius: 10px;
+}
