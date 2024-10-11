@@ -17,6 +17,7 @@ window.onload = function () {
         })
         .then(data => {
             zutatenData = getZutatenForCategory(data, currentCategory);
+            zutatenData = filterOutSauceZutaten(zutatenData); // Filtere Sauce-Zutaten aus
             shuffleArray(zutatenData);
             displayZutaten(currentZutatenIndex);
             addEventListeners();
@@ -31,6 +32,10 @@ function getZutatenForCategory(data, category) {
             if (zutat) return zutat;
         }
     }).filter(zutat => zutat);
+}
+
+function filterOutSauceZutaten(zutaten) {
+    return zutaten.filter(zutat => !zutat.tags.includes('sauce'));
 }
 
 function shuffleArray(array) {
@@ -52,10 +57,8 @@ function displayZutaten(index) {
 function loadImage(imagePath) {
     const imgElement = document.getElementById('zutaten-image');
     
-    // Setze zuerst das Platzhalterbild
     imgElement.src = PLACEHOLDER_IMAGE;
 
-    // Behandle verschiedene Bildpfadformate
     let fullImagePath;
     if (imagePath.startsWith('http')) {
         fullImagePath = imagePath;
@@ -65,10 +68,10 @@ function loadImage(imagePath) {
         fullImagePath = `${BASE_URL}${imagePath}`;
     }
 
-    console.log('Versuche Bild zu laden:', fullImagePath); // Debugging-Ausgabe
+    console.log('Versuche Bild zu laden:', fullImagePath);
 
     imgElement.onload = function() {
-        console.log('Bild erfolgreich geladen:', this.src); // Debugging-Ausgabe
+        console.log('Bild erfolgreich geladen:', this.src);
     };
     
     imgElement.onerror = function() {
