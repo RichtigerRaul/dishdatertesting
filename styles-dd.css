@@ -31,10 +31,20 @@ main {
     position: relative;
 }
 
-.card img {
+.card-image-container {
     width: 100%;
-    height: 200px; /* oder die gewünschte Höhe */
-    object-fit: cover; /* Dies verhindert das Abschneiden und passt das Bild in den Container ein */
+    height: 200px; /* Sie können diese Höhe anpassen */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.card img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
     border-radius: 10px;
 }
 
