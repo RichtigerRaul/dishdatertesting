@@ -1,5 +1,6 @@
 let zutatenData = [];
 let currentZutatenIndex = 0;
+let likedZutaten = [];
 
 window.onload = function () {
     fetch('json/z.json')
@@ -10,31 +11,50 @@ window.onload = function () {
             return response.json();
         })
         .then(data => {
-            zutatenData = data.z.Kategorien.Gemüse;
+            // Alle Kategorien in ein Array zusammenführen
+            zutatenData = Object.values(data.z.Kategorien).flat();
+            // Zufällig mischen
+            zutatenData = shuffleArray(zutatenData);
             displayZutaten(currentZutatenIndex);
             addEventListeners();
         })
         .catch(error => console.error('Fehler beim Laden der JSON-Daten:', error));
 };
 
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
+
 function displayZutaten(index) {
     const zutaten = zutatenData[index];
-    // Überprüfen Sie, ob das imagePath-Feld existiert, ansonsten verwenden Sie einen Standardpfad
-    const imagePath = zutaten.imagePath || `img/z/${index + 1}.jpg`;
+    const imagePath = zutaten.img || 'img/placeholder.jpg'; // Fallback-Bild
     document.getElementById('zutaten-image').src = imagePath;
     document.getElementById('zutaten-name').textContent = zutaten.name;
     document.getElementById('zutaten-tags').textContent = zutaten.tags.join(', ');
 }
 
 function addEventListeners() {
-    document.getElementById('like-btn').addEventListener('click', nextZutaten);
-    document.getElementById('dislike-btn').addEventListener('click', nextZutaten);
+    document.getElementById('like-btn').addEventListener('click', () => handleZutaten(true));
+    document.getElementById('dislike-btn').addEventListener('click', () => handleZutaten(false));
+}
+
+function handleZutaten(liked) {
+    if (liked) {
+        likedZutaten.push(zutatenData[currentZutatenIndex]);
+        console.log('Gelikte Zutaten:', likedZutaten);
+    }
+    nextZutaten();
 }
 
 function nextZutaten() {
     currentZutatenIndex++;
     if (currentZutatenIndex >= zutatenData.length) {
         currentZutatenIndex = 0;
+        zutatenData = shuffleArray(zutatenData); // Neu mischen, wenn alle durch sind
     }
     displayZutaten(currentZutatenIndex);
 }
