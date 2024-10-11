@@ -6,43 +6,48 @@ body {
     height: 100vh; /* Nimmt die volle Höhe des Viewports ein */
     margin: 0; /* Entfernt Standardmargen */
     flex-direction: column; /* Ordnet die Elemente untereinander an */
+    background-color: #f4f4f4; /* Optional: Hintergrundfarbe */
 }
 
-img, button {
-    margin: 10px 0; /* Abstand zwischen den Elementen */
+/* Stile für das Bild */
+img {
+    max-width: 100%; /* Bild wird auf maximal die Breite des Viewports skaliert */
+    height: auto; /* Hält das Seitenverhältnis bei */
+    margin-bottom: 20px; /* Abstand unterhalb des Bildes */
 }
 
+/* Stile für den Button */
 button {
-    padding: 15px 30px;
-    font-size: 18px;
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    padding: 15px 30px; /* Abstand im Button */
+    font-size: 18px; /* Schriftgröße */
+    background-color: #007BFF; /* Hintergrundfarbe */
+    color: white; /* Textfarbe */
+    border: none; /* Kein Rand */
+    border-radius: 10px; /* Abgerundete Ecken */
+    cursor: pointer; /* Zeiger ändert sich beim Hover */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Schattierung für 3D-Effekt */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Glatte Übergänge */
     outline: none; /* Entfernt den Standard-Umriss */
-    -webkit-tap-highlight-color: transparent; /* Entfernt den Tap-Highlight-Effekt auf Mobilgeräten */
+    margin-top: 20px; /* Abstand oberhalb des Buttons */
 }
 
-/* Entferne die Fokus-Umrisse auf mobilen Geräten */
+/* Entferne Fokus-Umrisse auf mobilen Geräten */
 button:focus {
     outline: none;
-    box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.5); /* Optional: Füge einen sanften Fokus-Schatten hinzu */
+    box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.5); /* Optional: sanfter Fokus-Schatten */
 }
 
-/* Effekt bei Hover (für Desktop-Browser) */
+/* Hover-Effekt für den Button (Desktop-Browser) */
 button:hover {
-    background-color: #0056b3;
-    transform: scale(1.05);
+    background-color: #0056b3; /* Änderung der Hintergrundfarbe bei Hover */
+    transform: scale(1.05); /* Leichte Vergrößerung bei Hover */
 }
 
-/* Effekt beim Klicken */
+/* Effekt beim Klicken auf den Button */
 button:active {
-    transform: scale(0.95);
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
-    background-color: #0056b3;
+    transform: scale(0.95); /* Leichtes Schrumpfen beim Klicken */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* Stärkere Schattierung beim Klicken */
+    background-color: #0056b3; /* Dunklere Farbe beim Klicken */
 }
 
 /* Entferne den blauen Umriss für Firefox */
@@ -53,7 +58,7 @@ button::-moz-focus-inner {
 /* Spezifische Regeln für mobile Browser */
 @media (hover: none) {
     button:hover {
-        transform: none; /* Keine Hover-Animationen auf Mobilgeräten */
+        transform: none; /* Keine Hover-Animation auf Mobilgeräten */
     }
 
     button:active {
