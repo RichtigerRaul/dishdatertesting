@@ -1,5 +1,5 @@
 // Funktion zur Navigation zwischen Seiten
-function goto(page,) {
-    window.location.href = {page);
+function goto(page) {
+    window.location.href = page;
 }
 
