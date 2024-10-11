@@ -19,7 +19,9 @@ window.onload = function () {
 
 function displayZutaten(index) {
     const zutaten = zutatenData[index];
-    document.getElementById('zutaten-image').src = zutaten.imagePath; // Angenommen, Sie haben ein 'imagePath'-Feld
+    // Überprüfen Sie, ob das imagePath-Feld existiert, ansonsten verwenden Sie einen Standardpfad
+    const imagePath = zutaten.imagePath || `img/z/${index + 1}.jpg`;
+    document.getElementById('zutaten-image').src = imagePath;
     document.getElementById('zutaten-name').textContent = zutaten.name;
     document.getElementById('zutaten-tags').textContent = zutaten.tags.join(', ');
 }
