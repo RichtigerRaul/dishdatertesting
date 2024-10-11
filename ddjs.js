@@ -1,7 +1,9 @@
 let zutatenData = [];
 let currentZutatenIndex = 0;
 let likedZutaten = [];
-let currentCategory = 'Snacks'; // Diese Variable kann geändert werden, um verschiedene Kategorien auszuwählen
+let currentCategory = 'Snacks';
+
+const PLACEHOLDER_IMAGE = 'https://raw.githubusercontent.com/RichtigerRaul/dishdatertesting/refs/heads/main/img/z/1.jpg';
 
 window.onload = function () {
     fetch('json/z.json')
@@ -41,30 +43,24 @@ function displayZutaten(index) {
     if (zutaten) {
         document.getElementById('zutaten-name').textContent = zutaten.name;
         document.getElementById('zutaten-tags').textContent = zutaten.tags.join(', ');
-        preloadImage(zutaten.img);
+        loadImage(zutaten.img);
     }
 }
 
-function preloadImage(src) {
-    const img = new Image();
+function loadImage(imagePath) {
     const imgElement = document.getElementById('zutaten-image');
-    const placeholder = 'img/placeholder.jpg';
+    
+    imgElement.src = PLACEHOLDER_IMAGE; // Setze zuerst das Platzhalterbild
 
-    // Verstecke das aktuelle Bild während des Ladens
-    imgElement.style.display = 'none';
-
+    const img = new Image();
     img.onload = function() {
         imgElement.src = this.src;
-        imgElement.style.display = 'block'; // Zeige das Bild wieder an
     };
-
     img.onerror = function() {
-        console.error(`Fehler beim Laden des Bildes: ${src}`);
-        imgElement.src = placeholder;
-        imgElement.style.display = 'block'; // Zeige das Platzhalterbild an
+        console.error(`Fehler beim Laden des Bildes: ${imagePath}`);
+        imgElement.src = PLACEHOLDER_IMAGE;
     };
-
-    img.src = src;
+    img.src = imagePath;
 }
 
 function addEventListeners() {
