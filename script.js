@@ -1,4 +1,4 @@
 // Funktion zur Navigation zwischen Seiten
-function navigateTo(page) {
+function goto(page) {
     window.location.href = page;
 }
