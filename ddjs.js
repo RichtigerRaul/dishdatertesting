@@ -7,7 +7,11 @@ const BASE_URL = 'https://richtigerraul.github.io/dishdatertesting/';
 const RAW_GITHUB_URL = 'https://raw.githubusercontent.com/RichtigerRaul/dishdatertesting/refs/heads/main/';
 const PLACEHOLDER_IMAGE = `${RAW_GITHUB_URL}img/z/1.jpg`;
 
-window.onload = function () {
+document.addEventListener('DOMContentLoaded', function() {
+    initializeApp();
+});
+
+function initializeApp() {
     fetch(`${BASE_URL}json/z.json`)
         .then(response => {
             if (!response.ok) {
@@ -17,13 +21,13 @@ window.onload = function () {
         })
         .then(data => {
             zutatenData = getZutatenForCategory(data, currentCategory);
-            zutatenData = filterOutSauceZutaten(zutatenData); // Filtere Sauce-Zutaten aus
+            zutatenData = filterOutSauceZutaten(zutatenData);
             shuffleArray(zutatenData);
             displayZutaten(currentZutatenIndex);
             addEventListeners();
         })
         .catch(error => console.error('Fehler beim Laden der JSON-Daten:', error));
-};
+}
 
 function getZutatenForCategory(data, category) {
     return data.z.Mahlzeiten[category].map(id => {
@@ -56,6 +60,7 @@ function displayZutaten(index) {
 
 function loadImage(imagePath) {
     const imgElement = document.getElementById('zutaten-image');
+    if (!imgElement) return;
     
     imgElement.src = PLACEHOLDER_IMAGE;
 
@@ -83,9 +88,13 @@ function loadImage(imagePath) {
 }
 
 function addEventListeners() {
-    document.getElementById('like-btn').addEventListener('click', () => handleZutaten(true));
-    document.getElementById('dislike-btn').addEventListener('click', () => handleZutaten(false));
-    document.getElementById('back-btn').addEventListener('click', () => goto('menu.html'));
+    const likeBtn = document.getElementById('like-btn');
+    const dislikeBtn = document.getElementById('dislike-btn');
+    const backBtn = document.getElementById('back-btn');
+
+    if (likeBtn) likeBtn.addEventListener('click', () => handleZutaten(true));
+    if (dislikeBtn) dislikeBtn.addEventListener('click', () => handleZutaten(false));
+    if (backBtn) backBtn.addEventListener('click', () => goto('menu.html'));
 }
 
 function handleZutaten(liked) {
@@ -108,5 +117,3 @@ function nextZutaten() {
 function goto(page) {
     window.location.href = `${BASE_URL}${page}`;
 }
-
-document.addEventListener('DOMContentLoaded', addEventListeners);
