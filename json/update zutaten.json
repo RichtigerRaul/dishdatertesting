@@ -1,0 +1,683 @@
+{
+    "z": {
+        "Kategorien": {
+            "Gemüse": [
+                {
+                    "id": 1,
+                    "name": "Kartoffeln",
+                    "img": "1.png",
+                    "tags": [
+                        "vegan",
+                        "vegetarisch",
+                        "low fat"
+                    ]
+                },
+                {
+                    "id": 2,
+                    "name": "Zwiebeln",
+                    "img": "2.png",
+                    "tags": [
+                        "vegan",
+                        "vegetarisch",
+                        "low fat"
+                    ]
+                },
+                {
+                    "id": 3,
+                    "name": "Knoblauch",
+                    "img": "3.png",
+                    "tags": [
+                        "vegan",
+                        "vegetarisch",
+                        "low fat"
+                    ]
+                },
+                {
+                    "id": 4,
+                    "name": "Tomaten",
+                    "img": "4.png",
+                    "tags": [
+                        "vegan",
+                        "vegetarisch",
+                        "low fat"
+                    ]
+                },
+                {
+                    "id": 5,
+                    "name": "Paprika",
+                    "img": "5.png",
+                    "tags": [
+                        "vegan",
+                        "vegetarisch",
+                        "low fat"
+                    ]
+                },
+                {
+                    "id": 6,
+                    "name": "Karotten",
+                    "img": "6.png",
+                    "tags": [
+                        "vegan",
+                        "vegetarisch",
+                        "low fat"
+                    ]
+                },
+                {
+                    "id": 7,
+                    "name": "Brokkoli",
+                    "img": "7.png",
+                    "tags": [
+                        "vegan",
+                        "vegetarisch",
+                        "low fat",
+                        "high protein"
+                    ]
+                },
+                {
+                    "id": 8,
+                    "name": "Blumenkohl",
+                    "img": "8.png",
+                    "tags": [
+                        "vegan",
+                        "vegetarisch",
+                        "low fat"
+                    ]
+                },
+                {
+                    "id": 9,
+                    "name": "Spinat",
+                    "img": "9.png",
+                    "tags": [
+                        "vegan",
+                        "vegetarisch",
+                        "low fat",
+                        "high protein"
+                    ]
+                },
+                {
+                    "id": 10,
+                    "name": "Zucchini",
+                    "img": "10.png",
+                    "tags": [
+                        "vegan",
+                        "vegetarisch",
+                        "low fat"
+                    ]
+                },
+                {
+                    "id": 11,
+                    "name": "Pilze",
+                    "img": "11.png",
+                    "tags": [
+                        "vegan",
+                        "vegetarisch",
+                        "low fat",
+                        "high protein"
+                    ]
+                },
+                {
+                    "id": 12,
+                    "name": "Erbsen",
+                    "img": "12.png",
+                    "tags": [
+                        "vegan",
+                        "vegetarisch",
+                        "high protein"
+                    ]
+                },
+                {
+                    "id": 13,
+                    "name": "Mais",
+                    "img": "13.png",
+                    "tags": [
+                        "vegan",
+                        "vegetarisch",
+                        "low fat"
+                    ]
+                },
+                {
+                    "id": 14,
+                    "name": "Bohnen",
+                    "img": "14.png",
+                    "tags": [
+                        "vegan",
+                        "vegetarisch",
+                        "high protein"
+                    ]
+                },
+                {
+                    "id": 15,
+                    "name": "Kichererbsen",
+                    "img": "15.png",
+                    "tags": [
+                        "vegan",
+                        "vegetarisch",
+                        "high protein"
+                    ]
+                },
+                {
+                    "id": 16,
+                    "name": "Sauerkraut",
+                    "img": "16.png",
+                    "tags": [
+                        "vegan",
+                        "vegetarisch",
+                        "low fat"
+                    ]
+                },
+                {
+                    "id": 17,
+                    "name": "Rote Bete",
+                    "img": "17.png",
+                    "tags": [
+                        "vegan",
+                        "vegetarisch",
+                        "low fat"
+                    ]
+                },
+                {
+                    "id": 18,
+                    "name": "Salat",
+                    "img": "18.png",
+                    "tags": [
+                        "vegan",
+                        "vegetarisch",
+                        "low fat"
+                    ]
+                },
+                {
+                    "id": 19,
+                    "name": "Gurke",
+                    "img": "19.png",
+                    "tags": [
+                        "vegan",
+                        "vegetarisch",
+                        "low fat"
+                    ]
+                }
+            ],
+            "Obst": [
+                {
+                    "id": 20,
+                    "name": "Avocado",
+                    "img": "20.png",
+                    "tags": [
+                        "vegan",
+                        "vegetarisch",
+                        "high protein",
+                        "low fat"
+                    ]
+                },
+                {
+                    "id": 21,
+                    "name": "Äpfel",
+                    "img": "21.png",
+                    "tags": [
+                        "vegan",
+                        "vegetarisch",
+                        "low fat"
+                    ]
+                },
+                {
+                    "id": 22,
+                    "name": "Bananen",
+                    "img": "22.png",
+                    "tags": [
+                        "vegan",
+                        "vegetarisch",
+                        "low fat"
+                    ]
+                },
+                {
+                    "id": 23,
+                    "name": "Erdbeeren",
+                    "img": "23.png",
+                    "tags": [
+                        "vegan",
+                        "vegetarisch",
+                        "low fat"
+                    ]
+                },
+                {
+                    "id": 24,
+                    "name": "Birnen",
+                    "img": "24.png",
+                    "tags": [
+                        "vegan",
+                        "vegetarisch",
+                        "low fat"
+                    ]
+                },
+                {
+                    "id": 25,
+                    "name": "Orangen",
+                    "img": "25.png",
+                    "tags": [
+                        "vegan",
+                        "vegetarisch",
+                        "low fat"
+                    ]
+                },
+                {
+                    "id": 26,
+                    "name": "Cucumber",
+                    "img": "26.png",
+                    "tags": [
+                        "vegan",
+                        "vegetarisch",
+                        "low fat"
+                    ]
+                },
+                {
+                    "id": 27,
+                    "name": "Apfelmus",
+                    "img": "27.png",
+                    "tags": [
+                        "vegan",
+                        "vegetarisch",
+                        "low fat"
+                    ]
+                }
+            ],
+            "Milchprodukte_Alternativen": [
+                {
+                    "id": 28,
+                    "name": "Milch",
+                    "img": "28.png",
+                    "tags": [
+                        "vegetarisch",
+                        "high protein"
+                    ]
+                },
+                {
+                    "id": 29,
+                    "name": "Käse",
+                    "img": "29.png",
+                    "tags": [
+                        "vegetarisch",
+                        "high protein"
+                    ]
+                },
+                {
+                    "id": 30,
+                    "name": "Joghurt",
+                    "img": "30.png",
+                    "tags": [
+                        "vegetarisch",
+                        "high protein",
+                        "low fat (je nach Sorte)"
+                    ]
+                },
+                {
+                    "id": 31,
+                    "name": "Quark",
+                    "img": "31.png",
+                    "tags": [
+                        "vegetarisch",
+                        "high protein",
+                        "low fat (je nach Sorte)"
+                    ]
+                },
+                {
+                    "id": 32,
+                    "name": "Schmelzkäse",
+                    "img": "32.png",
+                    "tags": [
+                        "vegetarisch"
+                    ]
+                },
+                {
+                    "id": 33,
+                    "name": "Hartkäse",
+                    "img": "33.png",
+                    "tags": [
+                        "vegetarisch",
+                        "high protein"
+                    ]
+                },
+                {
+                    "id": 34,
+                    "name": "Hafermilch",
+                    "img": "34.png",
+                    "tags": [
+                        "vegan",
+                        "vegetarisch"
+                    ]
+                },
+                {
+                    "id": 35,
+                    "name": "Sojamilch",
+                    "img": "35.png",
+                    "tags": [
+                        "vegan",
+                        "vegetarisch",
+                        "high protein"
+                    ]
+                }
+            ],
+            "Getreide_Backwaren": [
+                {
+                    "id": 36,
+                    "name": "Chiasamen",
+                    "img": "36.png",
+                    "tags": [
+                        "vegan",
+                        "vegetarisch",
+                        "high protein"
+                    ]
+                },
+                {
+                    "id": 37,
+                    "name": "Nudeln",
+                    "img": "37.png",
+                    "tags": [
+                        "vegetarisch"
+                    ]
+                },
+                {
+                    "id": 38,
+                    "name": "Reis",
+                    "img": "38.png",
+                    "tags": [
+                        "vegan",
+                        "vegetarisch",
+                        "low fat"
+                    ]
+                },
+                {
+                    "id": 39,
+                    "name": "Toastbrot",
+                    "img": "39.png",
+                    "tags": [
+                        "vegetarisch"
+                    ]
+                },
+                {
+                    "id": 40,
+                    "name": "Brot",
+                    "img": "40.png",
+                    "tags": [
+                        "vegetarisch"
+                    ]
+                },
+                {
+                    "id": 41,
+                    "name": "Haferflocken",
+                    "img": "41.png",
+                    "tags": [
+                        "vegan",
+                        "vegetarisch",
+                        "high protein"
+                    ]
+                },
+                {
+                    "id": 42,
+                    "name": "Haferkekse/Zwieback",
+                    "img": "42.png",
+                    "tags": [
+                        "vegetarisch"
+                    ]
+                },
+                {
+                    "id": 43,
+                    "name": "Kekse",
+                    "img": "43.png",
+                    "tags": [
+                        "vegetarisch"
+                    ]
+                }
+            ],
+            "Proteinquellen_Fleischprodukte": [
+                {
+                    "id": 44,
+                    "name": "Eier",
+                    "img": "44.png",
+                    "tags": [
+                        "vegetarisch",
+                        "high protein"
+                    ]
+                },
+                {
+                    "id": 45,
+                    "name": "Wurst",
+                    "img": "45.png",
+                    "tags": [
+                        "high protein"
+                    ]
+                },
+                {
+                    "id": 46,
+                    "name": "Aufstrich (Fleischwurst etc.)",
+                    "img": "46.png",
+                    "tags": [
+                        "high protein"
+                    ]
+                },
+                {
+                    "id": 47,
+                    "name": "Hähnchen",
+                    "img": "47.png",
+                    "tags": [
+                        "high protein",
+                        "low fat"
+                    ]
+                },
+                {
+                    "id": 48,
+                    "name": "Hackfleisch",
+                    "img": "48.png",
+                    "tags": [
+                        "high protein"
+                    ]
+                },
+                {
+                    "id": 49,
+                    "name": "Lachs",
+                    "img": "49.png",
+                    "tags": [
+                        "high protein"
+                    ]
+                },
+                {
+                    "id": 50,
+                    "name": "Thunfisch",
+                    "img": "50.png",
+                    "tags": [
+                        "high protein",
+                        "low fat"
+                    ]
+                },
+                {
+                    "id": 51,
+                    "name": "Sardinen",
+                    "img": "51.png",
+                    "tags": [
+                        "high protein"
+                    ]
+                },
+                {
+                    "id": 52,
+                    "name": "Tofu",
+                    "img": "52.png",
+                    "tags": [
+                        "vegan",
+                        "vegetarisch",
+                        "high protein",
+                        "low fat"
+                    ]
+                }
+            ],
+            "Fertigprodukte_Snacks": [
+                {
+                    "id": 53,
+                    "name": "Dosenpasta",
+                    "img": "53.png",
+                    "tags": [
+                        "vegetarisch"
+                    ]
+                },
+                {
+                    "id": 54,
+                    "name": "Honig",
+                    "img": "54.png",
+                    "tags": [
+                        "vegetarisch"
+                    ]
+                },
+                {
+                    "id": 55,
+                    "name": "Kartoffelchips",
+                    "img": "55.png",
+                    "tags": [
+                        "vegetarisch"
+                    ]
+                },
+                {
+                    "id": 56,
+                    "name": "Marmelade",
+                    "img": "56.png",
+                    "tags": [
+                        "vegan",
+                        "vegetarisch"
+                    ]
+                },
+                {
+                    "id": 57,
+                    "name": "Orangensaft",
+                    "img": "57.png",
+                    "tags": [
+                        "vegan",
+                        "vegetarisch"
+                    ]
+                },
+                {
+                    "id": 58,
+                    "name": "Schokocreme",
+                    "img": "58.png",
+                    "tags": [
+                        "vegetarisch"
+                    ]
+                },
+                {
+                    "id": 59,
+                    "name": "Schokolade",
+                    "img": "59.png",
+                    "tags": [
+                        "vegetarisch"
+                    ]
+                },
+                {
+                    "id": 60,
+                    "name": "Tütensuppen",
+                    "img": "60.png",
+                    "tags": [
+                        "vegetarisch",
+                        "low fat (je nach Sorte)"
+                    ]
+                }
+            ]
+        },
+        "Mahlzeiten": {
+            "Frühstück": [
+                28,
+                29,
+                30,
+                31,
+                32,
+                33,
+                34,
+                35,
+                36,
+                37,
+                38,
+                39,
+                41,
+                42,
+                43,
+                22,
+                23,
+                24,
+                25,
+                26,
+                27,
+                56
+            ],
+            "Mittagessen": [
+                1,
+                7,
+                9,
+                11,
+                12,
+                14,
+                15,
+                40,
+                41,
+                42,
+                43,
+                47,
+                48,
+                49,
+                50,
+                51,
+                52,
+                53,
+                30,
+                31,
+                32,
+                33,
+                34,
+                35,
+                36,
+                55,
+                39,
+                56,
+                57
+            ],
+            "Abendessen": [
+                1,
+                7,
+                9,
+                11,
+                12,
+                14,
+                15,
+                40,
+                41,
+                42,
+                43,
+                47,
+                48,
+                49,
+                50,
+                51,
+                52,
+                53,
+                30,
+                31,
+                32,
+                33,
+                34,
+                35,
+                36,
+                56,
+                57,
+                55,
+                39
+            ],
+            "Snacks": [
+                60,
+                45,
+                46,
+                28,
+                22,
+                23,
+                24,
+                25,
+                26,
+                27,
+                20,
+                39
+            ]
+        }
+    }
+}
